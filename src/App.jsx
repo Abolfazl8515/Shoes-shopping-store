@@ -1,9 +1,12 @@
 import "./App.css";
+import Layout from "./layout/Layout";
 
 const App = () => {
   return (
     <div className="App">
-      <h1 className="bg-black">This is Shopping store</h1>
+      <Layout>
+        <h1>vgfg</h1>
+      </Layout>
     </div>
   );
 };
