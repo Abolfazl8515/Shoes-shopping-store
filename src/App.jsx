@@ -12,8 +12,8 @@ const App = () => {
       <Layout>
         {/* <HomePage /> */}
         {/* <SignUp /> */}
-        <CartPage />
-        {/* <Login /> */}
+        {/* <CartPage /> */}
+        <Login />
         {/* <ProductList /> */}
       </Layout>
     </div>
