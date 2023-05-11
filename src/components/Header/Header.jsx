@@ -34,7 +34,11 @@ const Header = () => {
               className="mr-2"
             />
           </Link>
-          <img src="src/assets/Images/logo.svg" alt="logo" className="w-28" />
+          <img
+            src="src/assets/Images/logo.svg"
+            alt="logo"
+            className="w-28 h-16"
+          />
         </div>
       </nav>
     </header>
