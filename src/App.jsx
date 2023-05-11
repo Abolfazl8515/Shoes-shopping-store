@@ -5,17 +5,12 @@ import Layout from "./layout/Layout";
 import HomePage from "./pages/HomePage";
 import Login from "./components/Login/Login";
 import CartPage from "./pages/CartPage";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   return (
     <div className="App">
-      <Layout>
-        {/* <HomePage /> */}
-        {/* <SignUp /> */}
-        {/* <CartPage /> */}
-        <Login />
-        {/* <ProductList /> */}
-      </Layout>
+      <HomePage />
     </div>
   );
 };
