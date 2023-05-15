@@ -20,6 +20,17 @@ const reducer = (state, action) => {
       }
       return { ...state, products, total: state.total + action.payload.price };
     }
+    case "DELETE_FROM_CART": {
+      const products = [...state.products];
+      const filtredProducts = products.filter(
+        (p) => p.id !== action.payload.id
+      );
+      return {
+        ...state,
+        products: filtredProducts,
+        total: state.total - action.payload.price,
+      };
+    }
     default:
       return state;
   }

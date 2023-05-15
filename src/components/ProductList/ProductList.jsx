@@ -1,7 +1,12 @@
 import { data } from "../../../data";
-import { useCartActions } from "../../context/CartProvider";
+import { useCart, useCartActions } from "../../context/CartProvider";
+
+const checkInCart = (cart, item) => {
+  return cart.find((c) => c.id === item.id);
+};
 
 const ProductList = () => {
+  const { products } = useCart();
   const dispatch = useCartActions();
 
   const addToCartHandler = (product) => {
@@ -42,7 +47,7 @@ const ProductList = () => {
                     className="w-4/5 h-8 text-white bg-cyan-600 rounded-lg"
                     onClick={() => addToCartHandler(product)}
                   >
-                    Add to cart
+                    {checkInCart(products, product) ? "In cart" : "Add to cart"}
                   </button>
                 </div>
               </div>

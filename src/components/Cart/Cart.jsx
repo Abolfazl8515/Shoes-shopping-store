@@ -1,8 +1,24 @@
-import { useCart } from "../../context/CartProvider";
+import { Link } from "react-router-dom";
+import { useCart, useCartActions } from "../../context/CartProvider";
 
 const Cart = () => {
   const { products, total } = useCart();
+  const dispatch = useCartActions();
 
+  const deleteHandler = (product) => {
+    dispatch({ type: "DELETE_FROM_CART", payload: product });
+  };
+
+  if (products.length === 0) {
+    return (
+      <>
+        <h2 className="text-xl">Your cart is empty!</h2>
+        <Link to="/products" className="mt-3 text-cyan-600">
+          Go to shopping?
+        </Link>
+      </>
+    );
+  }
   return (
     <div className="md:w-3/4 w-5/6 mx-auto flex flex-col">
       <div className="text-left">
@@ -31,6 +47,7 @@ const Cart = () => {
                   <button
                     type="button"
                     className="text-red-400"
+                    onClick={() => deleteHandler(p)}
                   >
                     Delete
                   </button>
