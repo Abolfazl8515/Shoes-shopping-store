@@ -1,6 +1,13 @@
 import { data } from "../../../data";
+import { useCartActions } from "../../context/CartProvider";
 
 const ProductList = () => {
+  const dispatch = useCartActions();
+
+  const addToCartHandler = (product) => {
+    dispatch({ type: "ADD_TO_CART", payload: product });
+  };
+
   return (
     <main className="flex items-center justify-center flex-col">
       <h2 className="text-5xl border-b-2 border-b-cyan-500 rounded-b-md">
@@ -10,7 +17,10 @@ const ProductList = () => {
         <div className="w-full flex justify-center flex-wrap">
           {data.map((product) => {
             return (
-              <div className="flex flex-col rounded-lg w-64 m-2 bg-white">
+              <div
+                className="flex flex-col rounded-lg w-64 m-2 bg-white"
+                key={product.id}
+              >
                 <div className="w-full">
                   <img
                     src={product.src}
@@ -30,6 +40,7 @@ const ProductList = () => {
                   <button
                     type="button"
                     className="w-4/5 h-8 text-white bg-cyan-600 rounded-lg"
+                    onClick={() => addToCartHandler(product)}
                   >
                     Add to cart
                   </button>

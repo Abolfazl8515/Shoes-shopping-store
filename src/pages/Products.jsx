@@ -1,12 +1,8 @@
 import ProductList from "../components/ProductList/ProductList";
-import Layout from "../layout/Layout";
+import CartProvider from "../context/CartProvider";
 
 const Products = () => {
-  return (
-    <Layout>
-      <ProductList />
-    </Layout>
-  );
+  return <ProductList />;
 };
 
 export default Products;

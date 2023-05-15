@@ -1,8 +1,5 @@
-import Layout from "../../layout/Layout";
-
 const Login = () => {
   return (
-    <Layout>
       <div className="w-full flex items-center justify-center">
         <div className="lg:w-3/4 md:w-5/6 w-full flex flex-col items-center">
           <form className="w-full flex flex-col py-4">
@@ -41,7 +38,6 @@ const Login = () => {
           </form>
         </div>
       </div>
-    </Layout>
   );
 };
 
